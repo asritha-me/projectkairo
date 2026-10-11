@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply text-midnight-900 bg-slate-50;
+  }
+  * {
+    @apply border-slate-200;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200/80 shadow-sm;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-md hover:border-slate-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 text-white font-medium text-sm transition-all hover:bg-teal-700 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-midnight-700 font-medium text-sm border border-slate-200 transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-midnight-600 font-medium text-sm transition-all hover:bg-slate-100 active:scale-[0.98];
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-midnight-900 text-sm placeholder:text-slate-400 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500;
+  }
+  .label-text {
+    @apply block text-sm font-medium text-midnight-700 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 bg-[length:1000px_100%] animate-shimmer rounded-lg;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Markdown rendering in chat */
+.prose-chat p {
+  @apply mb-3 leading-relaxed text-midnight-700;
+}
+.prose-chat p:last-child {
+  @apply mb-0;
+}
+.prose-chat ul {
+  @apply mb-3 ml-4 list-disc space-y-1;
+}
+.prose-chat ol {
+  @apply mb-3 ml-4 list-decimal space-y-1;
+}
+.prose-chat li {
+  @apply leading-relaxed text-midnight-700;
+}
+.prose-chat strong {
+  @apply font-semibold text-midnight-900;
+}
+.prose-chat h3 {
+  @apply font-semibold text-midnight-900 mt-4 mb-2;
+}
+.prose-chat code {
+  @apply bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono text-teal-700;
+}
+.prose-chat blockquote {
+  @apply border-l-4 border-teal-300 pl-4 italic text-midnight-600 my-3;
+}

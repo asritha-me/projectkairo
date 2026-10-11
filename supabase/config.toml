@@ -1,0 +1,7 @@
+[functions.ai-process]
+verify_jwt = true
+entrypoint = "./functions/ai-process/index.ts"
+
+[functions.ai-chat]
+verify_jwt = true
+entrypoint = "./functions/ai-chat/index.ts"
